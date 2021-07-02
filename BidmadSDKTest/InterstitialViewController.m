@@ -36,10 +36,11 @@
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
     self.interstitial = [[BIDMADInterstitial alloc] init];
     [self.interstitial setParentViewController:self];
-    [self.interstitial setZoneID:@"75f67c11-899f-4970-9b8c-592ee9c82546"];
+    [self.interstitial setZoneID:@"27cd96bd-9fdb-423a-a0a4-571c22029c8b"];
     [self.interstitial setDelegate:self];
     
-//    [self.interstitial setTestDevice:@"b763d82d5e9bed4d0d235b490e6b81e6"];
+    [[BIDMADSetting sharedInstance] setTestDeviceId:@"efef126bdf722af38e9142fe0869b4e7"];
+//    [self.interstitial setTestDevice:@"efef126bdf722af38e9142fe0869b4e7"];
 }
 
 -(IBAction)loadInterstitial:(UIButton*)sender{
@@ -51,6 +52,18 @@
     if([self.interstitial isLoaded]){
         [self.interstitial showInterstitialView];
     }
+}
+- (IBAction)backBtnPressed:(id)sender {
+    NSLog(@"Back Button Pressed");
+    
+    if (self.interstitial != nil) {
+//        [self.interstitial removeInterstitialADS];
+        self.interstitial = nil;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        // DO NOTHING;
+    }];
 }
 
 #pragma mark Interstitial Delegate
@@ -69,7 +82,7 @@
 - (void)BIDMADInterstitialShow:(BIDMADInterstitial *)core
 {
     self.InterstitialCallbackDisplay.text = @"BIDMADInterstitialShow";
-
+    
     self.interstitial = [[BIDMADInterstitial alloc]init];
     [self.interstitial setZoneID:core.zoneID];
     [self.interstitial setParentViewController:self];

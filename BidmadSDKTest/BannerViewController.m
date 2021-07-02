@@ -69,6 +69,11 @@
 }
 
 - (IBAction)backBtn:(id)sender {
+    NSLog(@"Back Button Pressed");
+    
     [banner removeAds];     //광고 삭제
+    [self dismissViewControllerAnimated:YES completion:^{
+        // DO NOTHING;
+    }];
 }
 @end

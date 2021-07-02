@@ -6,6 +6,7 @@ target 'BidmadSDKTest' do
   use_frameworks!
 
   # Pods for BidmadSDKTest
-  pod 'BidmadSDK', '2.7.5'
+  pod 'BidmadSDK', '2.7.6'
+  pod 'Ads-Global', '~>3.4.2.8'
 
 end
