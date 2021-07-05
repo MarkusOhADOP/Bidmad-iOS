@@ -31,7 +31,7 @@
     
     [BIDMADSetting sharedInstance].isDebug = YES;
     banner = [[BIDMADBanner alloc] initWithParentViewController:self rootView:self.BannerContainer bannerSize:banner_320_50];
-    [banner setZoneID:@"2ecb6177-2a6a-4e13-b10f-4f2d804c491f"];
+    [banner setZoneID:@"14fc71bd-5284-4e72-a201-9a5cf670cfa2"];
     [banner setDelegate:self];
     [banner setRefreshInterval:60];
 //    [banner setTestDevice:@"b763d82d5e9bed4d0d235b490e6b81e6"];
@@ -66,6 +66,9 @@
 -(void)BIDMADBannerLoad:(BIDMADBanner *)core{
     self.bannerCallbackDisplay.text = @"BIDMADBannerLoad";
     NSLog(@"APPUI BIDMADBannerLoad");
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        [banner removeAds];
+//    });
 }
 
 - (IBAction)backBtn:(id)sender {

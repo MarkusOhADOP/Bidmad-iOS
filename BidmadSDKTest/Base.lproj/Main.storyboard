@@ -21,28 +21,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d0-9p-Dc6">
-                                <rect key="frame" x="146.5" y="136" width="82" height="30"/>
+                                <rect key="frame" x="146.5" y="84" width="82" height="30"/>
                                 <state key="normal" title="BannerView"/>
                                 <connections>
                                     <segue destination="hYw-eA-IlG" kind="presentation" modalPresentationStyle="fullScreen" id="C54-lf-Jfu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-k2-vci">
-                                <rect key="frame" x="161.5" y="366" width="52" height="30"/>
-                                <state key="normal" title="Reward"/>
-                                <connections>
-                                    <segue destination="jXf-Rl-83R" kind="presentation" modalPresentationStyle="fullScreen" id="k4c-o6-Sw7"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZq-Z5-yhH">
-                                <rect key="frame" x="153.5" y="251" width="68" height="30"/>
+                                <rect key="frame" x="153.5" y="145" width="68" height="30"/>
                                 <state key="normal" title="Interstitial"/>
                                 <connections>
                                     <segue destination="PUA-xG-LK6" kind="presentation" modalPresentationStyle="fullScreen" id="tmk-VB-rQA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-k2-vci">
+                                <rect key="frame" x="161.5" y="216" width="52" height="30"/>
+                                <state key="normal" title="Reward"/>
+                                <connections>
+                                    <segue destination="jXf-Rl-83R" kind="presentation" modalPresentationStyle="fullScreen" id="k4c-o6-Sw7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYu-gt-Lfq">
+                                <rect key="frame" x="126" y="282" width="123" height="30"/>
+                                <state key="normal" title="Reward Interstitial"/>
+                                <connections>
+                                    <segue destination="UKi-t8-vz6" kind="presentation" id="GJQ-5d-G4T"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGU-Fb-Htg">
-                                <rect key="frame" x="156.5" y="481" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="340" width="62" height="30"/>
                                 <state key="normal" title="Offerwall"/>
                                 <connections>
                                     <segue destination="VbJ-wm-Rq0" kind="presentation" id="qqU-fT-d7k"/>
@@ -51,14 +58,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rZq-Z5-yhH" firstAttribute="top" secondItem="3d0-9p-Dc6" secondAttribute="bottom" constant="85" id="AUj-Ef-SfL"/>
-                            <constraint firstItem="Mif-k2-vci" firstAttribute="top" secondItem="rZq-Z5-yhH" secondAttribute="bottom" constant="85" id="DuN-S5-evK"/>
-                            <constraint firstItem="3d0-9p-Dc6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="136" id="GY3-cb-KaT"/>
-                            <constraint firstItem="rZq-Z5-yhH" firstAttribute="centerX" secondItem="Mif-k2-vci" secondAttribute="centerX" id="Iw5-Qm-iGC"/>
-                            <constraint firstItem="3d0-9p-Dc6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mfj-E9-3G9"/>
-                            <constraint firstItem="HGU-Fb-Htg" firstAttribute="centerX" secondItem="Mif-k2-vci" secondAttribute="centerX" id="MrR-ru-Nms"/>
-                            <constraint firstItem="HGU-Fb-Htg" firstAttribute="top" secondItem="Mif-k2-vci" secondAttribute="bottom" constant="85" id="bNH-EA-pTA"/>
-                            <constraint firstItem="rZq-Z5-yhH" firstAttribute="centerX" secondItem="3d0-9p-Dc6" secondAttribute="centerX" id="jhG-uX-gIX"/>
+                            <constraint firstItem="HGU-Fb-Htg" firstAttribute="top" secondItem="JYu-gt-Lfq" secondAttribute="bottom" constant="28" id="5dh-tR-iYF"/>
+                            <constraint firstItem="Mif-k2-vci" firstAttribute="top" secondItem="rZq-Z5-yhH" secondAttribute="bottom" constant="41" id="9Lx-tu-5E7"/>
+                            <constraint firstItem="rZq-Z5-yhH" firstAttribute="centerX" secondItem="Mif-k2-vci" secondAttribute="centerX" id="GiA-dR-hRS"/>
+                            <constraint firstItem="Mif-k2-vci" firstAttribute="centerX" secondItem="JYu-gt-Lfq" secondAttribute="centerX" id="LOO-nl-aDt"/>
+                            <constraint firstItem="3d0-9p-Dc6" firstAttribute="centerX" secondItem="rZq-Z5-yhH" secondAttribute="centerX" id="SnP-as-RVM"/>
+                            <constraint firstItem="rZq-Z5-yhH" firstAttribute="top" secondItem="3d0-9p-Dc6" secondAttribute="bottom" constant="31" id="Sux-q4-lXS"/>
+                            <constraint firstItem="3d0-9p-Dc6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="bnV-tG-sAr"/>
+                            <constraint firstItem="3d0-9p-Dc6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nkJ-4H-mCR"/>
+                            <constraint firstItem="JYu-gt-Lfq" firstAttribute="centerX" secondItem="HGU-Fb-Htg" secondAttribute="centerX" id="rVD-A0-sg2"/>
+                            <constraint firstItem="JYu-gt-Lfq" firstAttribute="top" secondItem="Mif-k2-vci" secondAttribute="bottom" constant="36" id="uXE-iY-fJO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -185,7 +194,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8f-bh-Bwy">
-                                        <rect key="frame" x="103" y="168" width="168" height="30"/>
+                                        <rect key="frame" x="103.5" y="168" width="168" height="30"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="168" id="WEY-lf-IB1"/>
@@ -458,10 +467,42 @@
             </objects>
             <point key="canvasLocation" x="-770.39999999999998" y="136.28185907046478"/>
         </scene>
+        <!--Reward Interstitial View Controller-->
+        <scene sceneID="VTg-W1-Pa1">
+            <objects>
+                <viewController id="UKi-t8-vz6" customClass="RewardInterstitialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x5I-BC-kMo"/>
+                        <viewControllerLayoutGuide type="bottom" id="e3W-cn-Wox"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yPc-zb-ejD" customClass="SegueInterimAdVIew">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcF-cH-uo5">
+                                <rect key="frame" x="313" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="UKi-t8-vz6" eventType="touchUpInside" id="47e-or-udZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="faS-1j-QJ9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVB-nK-Ywd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="874"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
