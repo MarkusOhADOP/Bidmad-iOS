@@ -47,7 +47,7 @@
     [[BIDMADSetting sharedInstance]setIsDebug:YES];
 //    [[BIDMADSetting sharedInstance] setTestDeviceId:@""];
     [[BIDMADSetting sharedInstance] setTestDeviceId:@"efef126bdf722af38e9142fe0869b4e7"];
-    [self.reward setZoneID:@"e811bd3b-d212-49cb-965b-15332ad254bd"];//테스트 존아이디입니다. 프로젝트 적용시 그대로 사용하시면 안됩니다.
+    [self.reward setZoneID:@"3cac39be-4069-4bda-9b25-6412ff76e698"];//테스트 존아이디입니다. 프로젝트 적용시 그대로 사용하시면 안됩니다.
     [self.reward setParentViewController:self];
     [self.reward setDelegate:self];
     
