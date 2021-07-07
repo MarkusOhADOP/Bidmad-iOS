@@ -16,22 +16,17 @@
 #import "BIDMADUnityAds.h"
 #import "BIDMADAppLoving.h"
 #import "BIDMADInterstitial.h"
+#import "BIDMADAdmobAppOpenAd.h"
 
 @protocol BIDMADAppOpenAdDelegate;
 @protocol BIDMADAppOpenAdInnerDelegate;
 
-@interface BIDMADAppOpenAd : NSObject
+@interface BIDMADAppOpenAd : NSObject<BIDMADAppOpenAdInnerDelegate>
 
 @property (nonatomic, strong) id<BIDMADAppOpenAdDelegate> delegate;
 @property (nonatomic, strong) id<BIDMADAppOpenAdInnerDelegate> innerDelegate;
 @property (nonatomic, strong) UIViewController*             parentViewController;
 @property (strong, nonatomic) NSDictionary*                 ads_dic;
-@property (strong, nonatomic) NSDictionary*                      ecmp_rev_info;
-@property (strong, nonatomic) NSDictionary*                      area_info;
-@property (strong, nonatomic) NSDictionary*                    change_info;
-@property (strong, nonatomic) NSDictionary*                    date;
-@property (strong, nonatomic) NSString*                        mediationType;
-@property (nonatomic) int mediationNumber;
 @property (nonatomic) BOOL isDirectLoad;
 @property (nonatomic) NSString * zoneID;
 @property (nonatomic, strong) NSString* userId;
@@ -40,7 +35,6 @@
 @property (nonatomic) BOOL                       testMode;
 @property (nonatomic) BOOL                       isComplete;
 @property (nonatomic) BOOL                       isLoaded;
-@property (nonatomic) NSString*                 realZoneId;
 
 - (id)      init;
 - (void)    loadAppOpenAd;
@@ -67,7 +61,9 @@
 
 - (void)onAppOpenAdLoad:(BIDMADAppOpenAd *) core current:(NSDictionary*) currentDic;
 - (void)onAppOpenAdPresentFailed:(BIDMADAppOpenAd *) core code:(NSString *)error failType:(NSString*) failType current:(NSDictionary*)currentDic passbackStr:(NSString*) passBackStr passback:(NSDictionary*) passbackDic;
-- (void)onAppOpenAdPresentSuccess:(BIDMADRewardVideo *)core       current:(NSDictionary*) currentDic;
+- (void)onAppOpenAdPresentSuccess:(BIDMADAppOpenAd *)core current:(NSDictionary*) currentDic;
+- (void)onAppOpenAdClose:(BIDMADAppOpenAd *)core current:(NSDictionary*) currentDic;
+- (void)onAppOpenAdSuccess:(BIDMADAppOpenAd *)core current:(NSDictionary*) currentDic;
 
 @end
 

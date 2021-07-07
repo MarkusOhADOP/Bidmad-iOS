@@ -14,6 +14,7 @@
     UILabel *defaultLabel;
     UILabel *secondsDisplay;
     UIButton *skipButton;
+    UIView *realFrame;
 }
 
 - (instancetype)init
@@ -30,26 +31,22 @@
 }
 
 - (void)uiSetting {
-    self.frame = CGRectMake(0, 0, 300, 150);
-    self.backgroundColor = UIColor.whiteColor;
-    
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.frame cornerRadius:10];
-    CAShapeLayer *shape = [[CAShapeLayer alloc] init];
-    [shape setPath:path.CGPath];
-    self.layer.mask = shape;
-    
-    [self.layer setShadowColor:UIColor.grayColor.CGColor];
-    [self.layer setShadowOffset:CGSizeMake(0, 3)];
-    [self.layer setShadowOpacity:0.6];
-    [self.layer setMasksToBounds:NO];
+    self.frame = CGRectMake(0, 0, 310, 160);
     [self setClipsToBounds: NO];
-    [self.layer setShadowRadius:5];
+//    self.backgroundColor = UIColor.redColor;
+    
+    realFrame = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 300, 150)];
+    [realFrame setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [realFrame setBackgroundColor: UIColor.whiteColor];
+    [realFrame setClipsToBounds: NO];
+    [self addSubview: realFrame];
     
     defaultLabel = [[UILabel alloc] init];
     [defaultLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [defaultLabel setText: @"Video Ad Starting In..."];
     [defaultLabel setMinimumScaleFactor:20];
     [defaultLabel setAdjustsFontSizeToFitWidth:YES];
+    [defaultLabel.layer setCornerRadius:10];
     [self addSubview: defaultLabel];
     
     secondsDisplay = [[UILabel alloc] init];
@@ -57,7 +54,6 @@
     [secondsDisplay setFont: [UIFont systemFontOfSize:50]];
     [secondsDisplay setText: autoAdCall.stringValue];
     [secondsDisplay setTextAlignment:NSTextAlignmentCenter];
-    [secondsDisplay setCenter: self.center];
     [self addSubview: secondsDisplay];
     
     skipButton = [[UIButton alloc] init];
@@ -65,20 +61,33 @@
     [skipButton setTitle:@"SKIP AD" forState:UIControlStateNormal];
     [skipButton addTarget:self action:@selector(skipAdClicked) forControlEvents:UIControlEventTouchUpInside];
     [skipButton setBackgroundColor:UIColor.systemBlueColor];
+    [skipButton.layer setCornerRadius:10];
+    [skipButton.layer setMaskedCorners:kCALayerMinXMaxYCorner | kCALayerMaxXMaxYCorner];
     [self addSubview: skipButton];
     
     [NSLayoutConstraint activateConstraints:
      @[
-         [defaultLabel.centerXAnchor constraintEqualToAnchor: self.centerXAnchor],
-         [defaultLabel.topAnchor constraintEqualToAnchor: self.topAnchor],
+         [realFrame.centerXAnchor constraintEqualToAnchor: self.centerXAnchor],
+         [realFrame.centerYAnchor constraintEqualToAnchor: self.centerYAnchor],
+         [realFrame.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.8],
+         [realFrame.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.8],
+         [defaultLabel.centerXAnchor constraintEqualToAnchor: realFrame.centerXAnchor],
+         [defaultLabel.topAnchor constraintEqualToAnchor: realFrame.topAnchor],
          [defaultLabel.bottomAnchor constraintEqualToAnchor: secondsDisplay.topAnchor],
-         [secondsDisplay.centerXAnchor constraintEqualToAnchor: self.centerXAnchor],
+         [secondsDisplay.centerXAnchor constraintEqualToAnchor: realFrame.centerXAnchor],
          [secondsDisplay.topAnchor constraintEqualToAnchor: defaultLabel.bottomAnchor],
          [secondsDisplay.bottomAnchor constraintEqualToAnchor: skipButton.topAnchor],
-         [skipButton.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.5],
+         [skipButton.centerXAnchor constraintEqualToAnchor: realFrame.centerXAnchor],
+         [skipButton.widthAnchor constraintEqualToAnchor:realFrame.widthAnchor],
          [skipButton.topAnchor constraintEqualToAnchor:secondsDisplay.bottomAnchor],
-         [skipButton.bottomAnchor constraintEqualToAnchor: self.bottomAnchor]
+         [skipButton.bottomAnchor constraintEqualToAnchor: realFrame.bottomAnchor]
      ]];
+    
+    [realFrame.layer setCornerRadius: 10];
+    [realFrame.layer setShadowColor:UIColor.grayColor.CGColor];
+    [realFrame.layer setShadowOffset:CGSizeMake(0, 2)];
+    [realFrame.layer setShadowOpacity:0.3];
+    [realFrame.layer setShadowRadius:3];
 }
 
 - (void)skipAdClicked {
@@ -107,8 +116,14 @@
 
 - (void)drawRect:(CGRect)rect {
     [defaultLabel setText: @"Video Ad Starting In..."];
-    [secondsDisplay setText: autoAdCall.stringValue];
+    [secondsDisplay setText: [[NSString alloc] initWithFormat:@"%d", 5-[autoAdCall intValue]]];
     [skipButton setTitle:@"SKIP AD" forState:UIControlStateNormal];
+}
+
+- (void)dealloc
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self removeFromSuperview];
 }
 
 @end

@@ -12,6 +12,7 @@
 		26B1BE4B2692CE58003119FE /* RewardInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B1BE4A2692CE58003119FE /* RewardInterstitialViewController.m */; };
 		26B1BE4E2692D1A9003119FE /* SegueInterimAdVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B1BE4D2692D1A9003119FE /* SegueInterimAdVIew.m */; };
 		26B1BE502692EE27003119FE /* BidmadSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1BE4F2692EE27003119FE /* BidmadSDK.framework */; };
+		26B4FEF42694398E0004A818 /* AppOpenAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B4FEF32694398E0004A818 /* AppOpenAdViewController.m */; };
 		46AB202B218816CF00A2D82F /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AB202A218816CF00A2D82F /* RewardViewController.m */; };
 		46EFA9E01F69047F002B7C96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EFA9DF1F69047F002B7C96 /* AppDelegate.m */; };
 		46EFA9E31F69047F002B7C96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EFA9E21F69047F002B7C96 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		26B1BE4C2692D1A9003119FE /* SegueInterimAdVIew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueInterimAdVIew.h; sourceTree = "<group>"; };
 		26B1BE4D2692D1A9003119FE /* SegueInterimAdVIew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SegueInterimAdVIew.m; sourceTree = "<group>"; };
 		26B1BE4F2692EE27003119FE /* BidmadSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BidmadSDK.framework; sourceTree = "<group>"; };
+		26B4FEF22694398E0004A818 /* AppOpenAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppOpenAdViewController.h; sourceTree = "<group>"; };
+		26B4FEF32694398E0004A818 /* AppOpenAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppOpenAdViewController.m; sourceTree = "<group>"; };
 		46AB2029218816CF00A2D82F /* RewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
 		46AB202A218816CF00A2D82F /* RewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
 		46BFAB23221EAB6800C2AC3D /* BidmadSDKTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BidmadSDKTest.entitlements; sourceTree = "<group>"; };
@@ -79,6 +82,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26B4FEF52694399B0004A818 /* AdViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46EFA9FB1F6908FB002B7C96 /* BannerViewController.h */,
+				46EFA9FC1F6908FB002B7C96 /* BannerViewController.m */,
+				46EFA9FE1F690920002B7C96 /* InterstitialViewController.h */,
+				46EFA9FF1F690920002B7C96 /* InterstitialViewController.m */,
+				46AB2029218816CF00A2D82F /* RewardViewController.h */,
+				46AB202A218816CF00A2D82F /* RewardViewController.m */,
+				26B1BE492692CE58003119FE /* RewardInterstitialViewController.h */,
+				26B1BE4A2692CE58003119FE /* RewardInterstitialViewController.m */,
+				26B1BE4C2692D1A9003119FE /* SegueInterimAdVIew.h */,
+				26B1BE4D2692D1A9003119FE /* SegueInterimAdVIew.m */,
+				9FD8586F25D37178008D3A3E /* OfferwallController.h */,
+				9FD8587025D37178008D3A3E /* OfferwallController.m */,
+				26B4FEF22694398E0004A818 /* AppOpenAdViewController.h */,
+				26B4FEF32694398E0004A818 /* AppOpenAdViewController.m */,
+			);
+			path = AdViewController;
+			sourceTree = "<group>";
+		};
 		46EFA9CF1F69047F002B7C96 = {
 			isa = PBXGroup;
 			children = (
@@ -107,18 +131,7 @@
 				46EFA9DF1F69047F002B7C96 /* AppDelegate.m */,
 				46EFA9E11F69047F002B7C96 /* ViewController.h */,
 				46EFA9E21F69047F002B7C96 /* ViewController.m */,
-				46EFA9FB1F6908FB002B7C96 /* BannerViewController.h */,
-				46EFA9FC1F6908FB002B7C96 /* BannerViewController.m */,
-				46EFA9FE1F690920002B7C96 /* InterstitialViewController.h */,
-				46EFA9FF1F690920002B7C96 /* InterstitialViewController.m */,
-				46AB2029218816CF00A2D82F /* RewardViewController.h */,
-				46AB202A218816CF00A2D82F /* RewardViewController.m */,
-				26B1BE492692CE58003119FE /* RewardInterstitialViewController.h */,
-				26B1BE4A2692CE58003119FE /* RewardInterstitialViewController.m */,
-				26B1BE4C2692D1A9003119FE /* SegueInterimAdVIew.h */,
-				26B1BE4D2692D1A9003119FE /* SegueInterimAdVIew.m */,
-				9FD8586F25D37178008D3A3E /* OfferwallController.h */,
-				9FD8587025D37178008D3A3E /* OfferwallController.m */,
+				26B4FEF52694399B0004A818 /* AdViewController */,
 				46EFA9E41F69047F002B7C96 /* Main.storyboard */,
 				46EFA9E91F69047F002B7C96 /* LaunchScreen.storyboard */,
 				46EFA9E71F69047F002B7C96 /* Assets.xcassets */,
@@ -325,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EFA9E31F69047F002B7C96 /* ViewController.m in Sources */,
+				26B4FEF42694398E0004A818 /* AppOpenAdViewController.m in Sources */,
 				26B1BE4B2692CE58003119FE /* RewardInterstitialViewController.m in Sources */,
 				46EFA9E01F69047F002B7C96 /* AppDelegate.m in Sources */,
 				46EFAA001F690920002B7C96 /* InterstitialViewController.m in Sources */,
