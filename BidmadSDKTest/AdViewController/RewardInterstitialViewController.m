@@ -19,10 +19,13 @@
     SegueInterimAdVIew *adView;
     UIButton *reloadButton;
     UILabel *callbackLabelView;
+    __weak IBOutlet UIButton *backButton;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    
     GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"efef126bdf722af38e9142fe0869b4e7" ];
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
     
