@@ -530,29 +530,70 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIL-yX-pFf">
                                         <rect key="frame" x="0.0" y="129.5" width="343" height="129.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTh-OI-ISl">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcR-Gv-GEb">
                                         <rect key="frame" x="0.0" y="259" width="343" height="129"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="load">
-                                            <color key="titleColor" systemColor="systemBlueColor"/>
-                                            <color key="titleShadowColor" systemColor="separatorColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionButtonPressed:" destination="eQV-A6-rto" eventType="touchUpInside" id="zYk-Hq-ZbO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmq-N7-GHJ">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A85-wG-VKw">
+                                                <rect key="frame" x="95" y="46" width="150" height="40"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="oEJ-id-AXj"/>
+                                                    <constraint firstAttribute="width" constant="150" id="sSo-92-mdx"/>
+                                                </constraints>
+                                                <state key="normal" title="Load">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonPressAction:" destination="eQV-A6-rto" eventType="touchUpInside" id="W2O-fP-1mf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="A85-wG-VKw" firstAttribute="centerY" secondItem="BcR-Gv-GEb" secondAttribute="centerY" constant="1.3999999999999999" id="5j4-yy-GQ8"/>
+                                            <constraint firstItem="A85-wG-VKw" firstAttribute="centerX" secondItem="BcR-Gv-GEb" secondAttribute="centerX" constant="-1.3" id="klg-ki-iNS"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCo-WM-FB7">
                                         <rect key="frame" x="0.0" y="388" width="343" height="129.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="show"/>
-                                        <connections>
-                                            <action selector="actionButtonPressed:" destination="eQV-A6-rto" eventType="touchUpInside" id="rXk-x6-uqK"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="035-xf-OXv">
+                                                <rect key="frame" x="96.5" y="45" width="150" height="40"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="XGZ-wZ-DK5"/>
+                                                    <constraint firstAttribute="height" constant="40" id="YaE-Sl-jAQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Show">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonPressAction:" destination="eQV-A6-rto" eventType="touchUpInside" id="SOB-TN-eLN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="035-xf-OXv" firstAttribute="centerY" secondItem="ZCo-WM-FB7" secondAttribute="centerY" id="a2l-Eg-XWG"/>
+                                            <constraint firstItem="035-xf-OXv" firstAttribute="centerX" secondItem="ZCo-WM-FB7" secondAttribute="centerX" id="aPf-L4-smm"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJE-TS-4cn">
                                         <rect key="frame" x="0.0" y="517.5" width="343" height="129.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -590,14 +631,11 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

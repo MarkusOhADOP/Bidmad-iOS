@@ -18,9 +18,12 @@
 
 @interface BIDMADAdmobAppOpenAd : NSObject<GADFullScreenContentDelegate>
 
+@property (nonatomic, strong) NSString* sessionId;
+
 - (id)initWithAppOpenAd:(NSDictionary *)dic bidmadAppOpenAd:(BIDMADAppOpenAd *)appOpenAd;
-- (void)loadAdmobAppOpenAd: (UIViewController *)pvc;
-- (void)showAppOpenAd;
+- (void)loadAdmobAppOpenAd;
+- (void)showAppOpenAdOnVC: (UIViewController *)viewController;
 - (void)setTestDevice:(NSString *) deviceId;
+- (void)removeAppOpenAds;
 
 @end

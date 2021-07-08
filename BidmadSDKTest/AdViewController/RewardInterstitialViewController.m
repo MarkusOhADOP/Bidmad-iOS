@@ -7,6 +7,7 @@
 //
 
 #import "RewardInterstitialViewController.h"
+#import <BidmadSDK/BIDMADSetting.h>
 @import GoogleMobileAds;
 
 @interface RewardInterstitialViewController ()
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"efef126bdf722af38e9142fe0869b4e7" ];
+    [[BIDMADSetting sharedInstance] setIsDebug:YES];
     
     [self setupRewardInterstitial];
     
@@ -54,6 +56,7 @@
                                                                   320, 100)];
     [callbackLabelView setText: @"No Callback Yet"];
     [callbackLabelView setTextAlignment:NSTextAlignmentCenter];
+    [callbackLabelView setFont:[UIFont systemFontOfSize:22]];
     [[self view] addSubview: callbackLabelView];
     [adView setAdAvailableDelegate: self];
 }
@@ -75,7 +78,7 @@
 - (void)setupRewardInterstitial {
     rewardInterstitial = nil;
     rewardInterstitial = [[BIDMADRewardInterstitial alloc] init];
-    rewardInterstitial.zoneID = @"5b2c91dd-fa33-454e-a482-c02e389bd3e8";
+    rewardInterstitial.zoneID = @"1bb1963e-6a9b-46c9-a7e1-74a8d4066aea";
     rewardInterstitial.parentViewController = self;
     rewardInterstitial.delegate = self;
     [rewardInterstitial requestRewardInterstitial];
@@ -127,42 +130,58 @@
 }
 
 - (void)BIDMADRewardInterstitialLoad:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Load"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Load"];
+    });
     NSLog(@"BIDMADRewardInterstitialLoad");
 }
 
 - (void)BIDMADRewardInterstitialShow:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Show"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Show"];
+    });
     NSLog(@"BIDMADRewardInterstitialShow");
 }
 
 - (void)BIDMADRewardInterstitialClick:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Click"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Click"];
+    });
     NSLog(@"BIDMADRewardInterstitialClick");
 }
 
 - (void)BIDMADRewardInterstitialClose:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Close"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Close"];
+    });
     NSLog(@"BIDMADRewardInterstitialClose");
 }
 
 - (void)BIDMADRewardInterstitialSkipped:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Skipped"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Skipped"];
+    });
     NSLog(@"BIDMADRewardInterstitialSkipped");
 }
 
 - (void)BIDMADRewardInterstitialSuccess:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Success"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Success"];
+    });
     NSLog(@"BIDMADRewardInterstitialSuccess");
 }
 
 - (void)BIDMADRewardInterstitialComplete:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"Complete"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"Complete"];
+    });
     NSLog(@"BIDMADRewardInterstitialComplete");
 }
 
 - (void)BIDMADRewardInterstitialAllFail:(BIDMADRewardInterstitial *)core {
-    [callbackLabelView setText: @"AllFail"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->callbackLabelView setText: @"AllFail"];
+    });
     NSLog(@"BIDMADRewardInterstitialAllFail");
 }
 

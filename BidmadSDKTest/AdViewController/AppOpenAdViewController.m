@@ -18,52 +18,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.callbackLabel setText:@"No Callback Yet"];
+    
+    [[BIDMADSetting sharedInstance] setIsDebug:YES];
+    
     self.bidmadAppOpenAd = [[BIDMADAppOpenAd alloc] init];
-    self.bidmadAppOpenAd.zoneID = @"14fc71bd-5284-4e72-a201-9a5cf670cfa2";
-    self.bidmadAppOpenAd.parentViewController = self;
+    self.bidmadAppOpenAd.zoneID = @"8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c";
     self.bidmadAppOpenAd.delegate = self;
 }
 
-- (IBAction)backButtonPressed:(id)sender {
-    
+- (IBAction)buttonPressAction:(UIButton *)sender {
+    if ([sender.titleLabel.text isEqualToString:@"Load"]) {
+        [self.bidmadAppOpenAd requestAppOpenAd];
+    } else if ([sender.titleLabel.text isEqualToString:@"Show"]) {
+        if (self.bidmadAppOpenAd.isLoaded) {
+            [self.bidmadAppOpenAd showAppOpenAd];
+        }
+    }
 }
 
-- (IBAction)actionButtonPressed:(UIButton *)sender {
-    if ([sender.titleLabel.text isEqualToString: @"load"]) {
-        [self.bidmadAppOpenAd loadAppOpenAd];
-    } else if ([sender.titleLabel.text isEqualToString: @"show"]) {
-        [self.bidmadAppOpenAd showAppOpenAd];
-    }
+- (IBAction)backButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)BIDMADAppOpenAdClose:(BIDMADAppOpenAd *)core {
     NSLog(@"Callback → BIDMADAppOpenAdClose");
-    [self.callbackLabel setText:@"Close"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.callbackLabel setText:@"Close"];
+    });
+    
 }
 
-- (void)BIDMADAppOpenAdLoad:(BIDMADAppOpenAd *)core current:(NSDictionary *)currentDic {
+- (void)BIDMADAppOpenAdLoad:(BIDMADAppOpenAd *)core {
     NSLog(@"Callback → BIDMADAppOpenAdLoad");
-    [self.callbackLabel setText:@"Load"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.callbackLabel setText:@"Load"];
+    });
+    
 }
 
-- (void)BIDMADAppOpenAdShow:(BIDMADAppOpenAd *)core current:(NSDictionary *)currentDic {
+- (void)BIDMADAppOpenAdShow:(BIDMADAppOpenAd *)core {
     NSLog(@"Callback → BIDMADAppOpenAdShow");
-    [self.callbackLabel setText:@"Show"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.callbackLabel setText:@"Show"];
+    });
 }
 
-- (void)BIDMADAppOpenAdAllFail:(BIDMADAppOpenAd *)core {
+- (void)BIDMADAppOpenAdAllFail:(BIDMADAppOpenAd *)core code:(NSString *)error {
     NSLog(@"Callback → BIDMADAppOpenAdAllFail");
-    [self.callbackLabel setText:@"Fail"];
-}
-
-- (void)BIDMADAppOpenPresentFail:(BIDMADAppOpenAd *)core
-                            code:(NSString *)error
-                        failType:(NSString *)failType
-                         current:(NSDictionary *)currentDic
-                     passbackStr:(NSString *)passBackStr
-                        passback:(NSDictionary *)passbackDic {
-    NSLog(@"Callback → BIDMADAppOpenPresentFail");
-    [self.callbackLabel setText:@"Could Not Present"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.callbackLabel setText:@"Fail"];
+    });
 }
 
 @end
