@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		148A307F691CE2547AFE7C46 /* Pods_BidmadSDKTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD79908517C0A4FDFC190860 /* Pods_BidmadSDKTest.framework */; };
+		261FF6FA269EB55800014635 /* RewardInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FF6F9269EB55700014635 /* RewardInterstitialViewController.swift */; };
 		265E6471264BB3720006C750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E6470264BB3720006C750 /* main.m */; };
 		26B1BE4B2692CE58003119FE /* RewardInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B1BE4A2692CE58003119FE /* RewardInterstitialViewController.m */; };
 		26B1BE4E2692D1A9003119FE /* SegueInterimAdVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B1BE4D2692D1A9003119FE /* SegueInterimAdVIew.m */; };
@@ -38,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		261FF6F8269EB55700014635 /* BidmadSDKTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BidmadSDKTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		261FF6F9269EB55700014635 /* RewardInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardInterstitialViewController.swift; sourceTree = "<group>"; };
 		265E6470264BB3720006C750 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26B1BE492692CE58003119FE /* RewardInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardInterstitialViewController.h; sourceTree = "<group>"; };
 		26B1BE4A2692CE58003119FE /* RewardInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardInterstitialViewController.m; sourceTree = "<group>"; };
@@ -93,12 +96,14 @@
 				46AB202A218816CF00A2D82F /* RewardViewController.m */,
 				26B1BE492692CE58003119FE /* RewardInterstitialViewController.h */,
 				26B1BE4A2692CE58003119FE /* RewardInterstitialViewController.m */,
+				261FF6F9269EB55700014635 /* RewardInterstitialViewController.swift */,
 				26B1BE4C2692D1A9003119FE /* SegueInterimAdVIew.h */,
 				26B1BE4D2692D1A9003119FE /* SegueInterimAdVIew.m */,
 				9FD8586F25D37178008D3A3E /* OfferwallController.h */,
 				9FD8587025D37178008D3A3E /* OfferwallController.m */,
 				26B4FEF22694398E0004A818 /* AppOpenAdViewController.h */,
 				26B4FEF32694398E0004A818 /* AppOpenAdViewController.m */,
+				261FF6F8269EB55700014635 /* BidmadSDKTest-Bridging-Header.h */,
 			);
 			path = AdViewController;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 					46EFA9D71F69047F002B7C96 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = MWF8UC94P5;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261FF6FA269EB55800014635 /* RewardInterstitialViewController.swift in Sources */,
 				46EFA9E31F69047F002B7C96 /* ViewController.m in Sources */,
 				26B4FEF42694398E0004A818 /* AppOpenAdViewController.m in Sources */,
 				26B1BE4B2692CE58003119FE /* RewardInterstitialViewController.m in Sources */,
@@ -495,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
@@ -516,6 +524,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adop.mnctest;
 				PRODUCT_NAME = BidmadSimTest;
 				PROVISIONING_PROFILE_SPECIFIER = MNCTEST_DEV;
+				SWIFT_OBJC_BRIDGING_HEADER = "BidmadSDKTest/AdViewController/BidmadSDKTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "$(inherited)";
 				"VALID_ARCHS[sdk=iphoneos*]" = "$(inherited)";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(inherited)";
@@ -528,6 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
@@ -549,6 +561,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adop.mnctest;
 				PRODUCT_NAME = BidmadSimTest;
 				PROVISIONING_PROFILE_SPECIFIER = MNCTEST_DEV;
+				SWIFT_OBJC_BRIDGING_HEADER = "BidmadSDKTest/AdViewController/BidmadSDKTest-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "$(inherited)";
 				"VALID_ARCHS[sdk=iphoneos*]" = "$(inherited)";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(inherited)";
