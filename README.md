@@ -29,7 +29,7 @@
         1. Podfile 내부에 다음 코드 추가
 
             ```
-            platform :ios, "10.0"
+            platform :ios, "11.0"
 
             target "Runner" do
              use_frameworks!
@@ -79,7 +79,7 @@
       ...
     </array>
     <key>NSUserTrackingUsageDescription</key>
-    <string>This application uses personal info for ad targeting and to .</string>
+    <string>This application uses personal info for ad targeting.</string>
     <key>NSAppTransportSecurity</key> 
     <dict>
       <key>NSAllowsArbitraryLoads</key> 
@@ -437,11 +437,11 @@ func bidmadRewardVideoSucceed(_ core: BIDMADRewardVideo!) {
 @interface RewardInterstitialViewController : UIViewController<BIDMADRewardInterstitialDelegate>
 ···
 @end
-···
+
 @implementation RewardInterstitialViewController {
     BIDMADRewardInterstitial *rewardInterstitial;
 }
-···
+
 - (void)viewDidLoad {
     rewardInterstitial = [[BIDMADRewardInterstitial alloc] init];
     rewardInterstitial.zoneID = @"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
@@ -449,13 +449,13 @@ func bidmadRewardVideoSucceed(_ core: BIDMADRewardVideo!) {
     rewardInterstitial.delegate = self;
     [rewardInterstitial requestRewardInterstitial];
 }
-···
+
 - (void)adShow {
     if (rewardInterstitial.isLoaded) {
         [rewardInterstitial showRewardInterstitialView];
     }
 }
-···
+
 - (void)removeAd {
     [rewardInterstitial removeRewardInterstitialAds];
     rewardInterstitial = nil;
@@ -479,7 +479,7 @@ class RewardInterstitialViewControllerSwift: UIViewController {
         super.viewDidLoad()
         
         rewardInterstititial = BIDMADRewardInterstitial()
-        rewardInterstititial.zoneID = "1bb1963e-6a9b-46c9-a7e1-74a8d4066aea"
+        rewardInterstititial.zoneID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         rewardInterstititial.parentViewController = self
         rewardInterstititial.delegate = self
         rewardInterstititial.request()
@@ -506,12 +506,6 @@ class RewardInterstitialViewControllerSwift: UIViewController {
 <br>
 
 ```
-#import <BidmadSdk/BIDMADRewardInterstitial.h>
-
-@interface RewardInterstitialViewController : UIViewController<BIDMADRewardInterstitialDelegate>
-···
-@end
-···
 - (void)BIDMADRewardInterstitialLoad:(BIDMADRewardInterstitial *)core {
     NSLog(@"BIDMADRewardInterstitialLoad");
 }
@@ -585,7 +579,7 @@ registerForAppOpenAdForZoneID 메서드는 사용자가 광고를 닫은 이후�
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     bidmadAppOpenAd = [[BIDMADAppOpenAd alloc] init];
     [bidmadAppOpenAd setDelegate: self];
-    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c"];
+    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"];
     
     return YES;
 }
@@ -609,7 +603,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         appOpen = BIDMADAppOpenAd()
         appOpen.delegate = self
-        appOpen.registerForAppOpenAd(forZoneID: "8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c")
+        appOpen.registerForAppOpenAd(forZoneID: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
         
         return true
     }
@@ -640,7 +634,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     bidmadAppOpenAd = [[BIDMADAppOpenAd alloc] init];
-    bidmadAppOpenAd.zoneID = @"8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c";
+    bidmadAppOpenAd.zoneID = @"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
     bidmadAppOpenAd.delegate = self;
     [bidmadAppOpenAd requestAppOpenAd];
     return YES;
@@ -672,11 +666,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         appOpen = BIDMADAppOpenAd()
-        appOpen.zoneID = "8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c"
+        appOpen.zoneID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         appOpen.delegate = self;
         appOpen.request()
         
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if (appOpen.isLoaded) {
+            self.appOpen.show()
+        }
     }
     
     // App Open Close callback, Re-Load the Ad for later use

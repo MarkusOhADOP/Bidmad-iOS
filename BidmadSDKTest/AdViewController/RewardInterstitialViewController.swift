@@ -70,6 +70,9 @@ extension RewardInterstitialViewControllerSwift: BIDMADRewardInterstitialDelegat
 extension RewardInterstitialViewControllerSwift: BIDMADAppOpenAdDelegate {
     func bidmadAppOpenAdLoad(_ core: BIDMADAppOpenAd!) {
         print("bidmadAppOpenAdLoad")
+        if (appOpen.isLoaded) {
+            self.appOpen.show()
+        }
     }
     
     func bidmadAppOpenAdShow(_ core: BIDMADAppOpenAd!) {
