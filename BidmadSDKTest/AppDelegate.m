@@ -44,7 +44,7 @@
 }
 
 - (void)reloadAppOpenAd {
-    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c"];
+    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"0ddd6401-0f19-49ee-b1f9-63e910f92e77"];
 }
 
 - (void)BIDMADAppOpenAdAllFail:(BIDMADAppOpenAd *)core code:(NSString *)error {
