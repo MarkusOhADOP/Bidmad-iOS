@@ -33,14 +33,13 @@
         4. 한번 광고를 시청하고나면,첫번째 광고를 다 보고 난 후 Close 버튼을 통해서 아래의 BIDMADInterstitialClose 콜백함수가 불리게 됩니다. 이때, 미리 다음 광고영상을 loadInterstitialView를 통해서 미리 로드하길 권장합니다.
      */
     
+//    [[BIDMADSetting sharedInstance] setTestDeviceId:@"YOUR_TEST_DEVICE_ID"];
+    
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
     self.interstitial = [[BIDMADInterstitial alloc] init];
     [self.interstitial setParentViewController:self];
-    [self.interstitial setZoneID:@"75f67c11-899f-4970-9b8c-592ee9c82546"];
+    [self.interstitial setZoneID:@"228b95a9-6f42-46d8-a40d-60f17f751eb1"];
     [self.interstitial setDelegate:self];
-    
-    [[BIDMADSetting sharedInstance] setTestDeviceId:@"efef126bdf722af38e9142fe0869b4e7"];
-//    [self.interstitial setTestDevice:@"efef126bdf722af38e9142fe0869b4e7"];
 }
 
 -(IBAction)loadInterstitial:(UIButton*)sender{

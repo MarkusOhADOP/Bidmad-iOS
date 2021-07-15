@@ -23,7 +23,7 @@
 - (id)initWithAppOpenAd:(NSDictionary *)dic bidmadAppOpenAd:(BIDMADAppOpenAd *)appOpenAd;
 - (void)loadAdmobAppOpenAd;
 - (void)showAppOpenAdOnVC: (UIViewController *)viewController;
-- (void)setTestDevice:(NSString *) deviceId;
+- (void)setTestDevice;
 - (void)removeAppOpenAds;
 
 @end

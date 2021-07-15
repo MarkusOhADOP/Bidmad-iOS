@@ -8,8 +8,9 @@
         <summary>Ad Network Lists</summary>
         <br>
         
-        - GoogleManager (Banner, Interstitial, Reward Video)
-        - GoogleAdmob (Banner, Interstitial, Reward Video)
+        - Google Manager (Banner, Interstitial, Reward Video)
+        - Google Admob (Banner, Interstitial, Reward Video, Rewarded Interstitial, App Open)
+        - Pangle (Banner, Interstitial, Reward Video)
         - AppLovin (Reward Video)
         - UnityAds (Reward Video, Banner)
         - Facebook Audience Network (Banner, Interstitial, Reward Video)
@@ -42,7 +43,7 @@
         pod install
         ```
 
-    - **(Not Recommeded)** Manual Framework Embedding Method
+    - **(Not Recommeded)** Manual Framework Embedding Method **( Manual Framework Embedding Method does not support Swift )**
         1. Add libraries to "Link Binary With Libraries" settings as shown in the image below ( Target → Build Phases → Link Binary With Libraries )<br>
             ![Link_Binary_With_Libraries](https://i.imgur.com/73OTB5n.png) <br>
         2. Add frameworks and bundles to projects as below ( Target → General → Frameworks, Libraries, and Embedded Content )<br>
@@ -515,7 +516,6 @@ class RewardInterstitialViewControllerSwift: UIViewController {
 - (void)BIDMADRewardInterstitialAllFail:(BIDMADRewardInterstitial *)core {
     NSLog(@"BIDMADRewardInterstitialAllFail");
 }
-@
 ```
 </details>
 
@@ -549,10 +549,10 @@ extension RewardInterstitialViewControllerSwift: BIDMADRewardInterstitialDelegat
 </details>
 
 ### Loading an App Open Ad
-App Open ads are shown to users when the app is brought to the foreground, monetizing the app loading screen.
-App Open Ads show app-branding on the top of the ad view so that the app users can be notified that they are using your app.
-BidmadSDK provides registerForAppOpenAdForZoneID method for easier App Open ad load.
-The registerForAppOpenAdForZoneID method reloads ads when the user closes the App Open Ad.
+App Open ads are shown to users when the app is brought to the foreground, monetizing the app loading screen.<br>
+App Open Ads show app-branding on the top of the ad view so that the app users can be notified that they are using your app.<br>
+BidmadSDK provides registerForAppOpenAdForZoneID method for easier App Open ad load.<br>
+The registerForAppOpenAdForZoneID method reloads ads when the user closes the App Open Ad.<br>
 
 <details markdown="1">
 <summary>ObjC</summary>

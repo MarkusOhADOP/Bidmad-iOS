@@ -8,8 +8,9 @@
         <summary>애드 네트워크 리스트</summary>
         <br>
         
-        - GoogleManager (Banner, Interstitial, Reward Video)
-        - GoogleAdmob (Banner, Interstitial, Reward Video)
+        - Google Manager (Banner, Interstitial, Reward Video)
+        - Google Admob (Banner, Interstitial, Reward Video, Rewarded Interstitial, App Open)
+        - Pangle (Banner, Interstitial, Reward Video)
         - AppLovin (Reward Video)
         - UnityAds (Reward Video, Banner)
         - Facebook Audience Network (Banner, Interstitial, Reward Video)
@@ -42,7 +43,7 @@
             pod install
             ```
 
-    - **(비추천)** 수동적인 Framework 추가 방법
+    - **(비추천)** 수동적인 Framework 추가 방법 **( 수동적인 Framework 추가 방법은 Swift를 지원하지 않습니다 )**
         1. Link Binary With Libraries 세팅에 다음 이미지와 같이 라이브러리 추가 ( Target → Build Phases → Link Binary With Libraries )<br>
             ![Link_Binary_With_Libraries](https://i.imgur.com/73OTB5n.png) <br>
         2. 프레임워크 및 번들을 다음 이미지와 같이 프로젝트에 추가 ( Target → General → Frameworks, Libraries, and Embedded Content )<br>
@@ -524,7 +525,6 @@ class RewardInterstitialViewControllerSwift: UIViewController {
 - (void)BIDMADRewardInterstitialAllFail:(BIDMADRewardInterstitial *)core {
     NSLog(@"BIDMADRewardInterstitialAllFail");
 }
-@
 ```
 </details>
 
@@ -558,10 +558,10 @@ extension RewardInterstitialViewControllerSwift: BIDMADRewardInterstitialDelegat
 </details>
 
 ### App Open 광고 로드
-App Open 광고는 사용자가 앱을 포그라운드로 가져올 때, 앱 로드 화면으로 수익을 올리는 광고 형식입니다. 
-App Open 광고는 사용자가 해당 앱을 사용 중임을 알 수 있도록 상단에 앱 로고를 표기합니다.
-BidmadSDK는 더 쉬운 App Open 광고 로드를 위해 registerForAppOpenAdForZoneID 메서드를 제공하고 있습니다.
-registerForAppOpenAdForZoneID 메서드는 사용자가 광고를 닫은 이후에도 다시 광고를 로드합니다.
+App Open 광고는 사용자가 앱을 포그라운드로 가져올 때, 앱 로드 화면으로 수익을 올리는 광고 형식입니다. <br>
+App Open 광고는 사용자가 해당 앱을 사용 중임을 알 수 있도록 상단에 앱 로고를 표기합니다.<br>
+BidmadSDK는 더 쉬운 App Open 광고 로드를 위해 registerForAppOpenAdForZoneID 메서드를 제공하고 있습니다.<br>
+registerForAppOpenAdForZoneID 메서드는 사용자가 광고를 닫은 이후에도 다시 광고를 로드합니다.<br>
 
 <details markdown="1">
 <summary>ObjC</summary>

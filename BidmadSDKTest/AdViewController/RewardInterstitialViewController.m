@@ -25,8 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [backButton setTitle:@"Back" forState:UIControlStateNormal];
-    
-    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"efef126bdf722af38e9142fe0869b4e7" ];
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
     
     [self setupRewardInterstitial];
@@ -81,7 +79,7 @@
 - (void)setupRewardInterstitial {
     rewardInterstitial = nil;
     rewardInterstitial = [[BIDMADRewardInterstitial alloc] init];
-    rewardInterstitial.zoneID = @"1bb1963e-6a9b-46c9-a7e1-74a8d4066aea";
+    rewardInterstitial.zoneID = @"ee6e601d-2232-421b-a429-2e7163a8b41f";
     rewardInterstitial.parentViewController = self;
     rewardInterstitial.delegate = self;
     [rewardInterstitial requestRewardInterstitial];

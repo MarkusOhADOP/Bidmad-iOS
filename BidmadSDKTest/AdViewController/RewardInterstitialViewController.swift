@@ -18,16 +18,16 @@ class RewardInterstitialViewControllerSwift: UIViewController {
         super.viewDidLoad()
         
         appOpen = BIDMADAppOpenAd()
-        appOpen.zoneID = "8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c"
+        appOpen.zoneID = "0ddd6401-0f19-49ee-b1f9-63e910f92e77"
         appOpen.delegate = self
         appOpen.request()
         
         appOpen.delegate = self
-        appOpen.registerForAppOpenAd(forZoneID: "8895ec21-d6b2-42d5-a2ad-1eb17e3e8f9c")
+        appOpen.registerForAppOpenAd(forZoneID: "0ddd6401-0f19-49ee-b1f9-63e910f92e77")
         appOpen.deregisterForAppOpenAd()
         
         rewardInterstititial = BIDMADRewardInterstitial()
-        rewardInterstititial.zoneID = "1bb1963e-6a9b-46c9-a7e1-74a8d4066aea"
+        rewardInterstititial.zoneID = "ee6e601d-2232-421b-a429-2e7163a8b41f"
         rewardInterstititial.parentViewController = self
         rewardInterstititial.delegate = self
         rewardInterstititial.request()
