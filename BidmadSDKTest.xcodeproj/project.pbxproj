@@ -274,12 +274,14 @@
 				"${PODS_ROOT}/Ads-Global/PangleSDK/LICENSE",
 				"${PODS_ROOT}/Ads-Global/PangleSDK/BUAdSDK.bundle",
 				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-10.0.1/AppLovinSDKResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/BidmadSDK/bidmad_asset.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LICENSE",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BUAdSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bidmad_asset.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
