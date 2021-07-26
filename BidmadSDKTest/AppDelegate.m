@@ -35,7 +35,7 @@
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
     bidmadAppOpenAd = [[BIDMADAppOpenAd alloc] init];
     [bidmadAppOpenAd setDelegate: self];
-    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"0ddd6401-0f19-49ee-b1f9-63e910f92e77"];
+    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"c2b88e38-6120-4716-9378-5cc8f3443767"];
     return YES;
 }
 
@@ -44,7 +44,7 @@
 }
 
 - (void)reloadAppOpenAd {
-    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"0ddd6401-0f19-49ee-b1f9-63e910f92e77"];
+    [bidmadAppOpenAd registerForAppOpenAdForZoneID: @"c2b88e38-6120-4716-9378-5cc8f3443767"];
 }
 
 - (void)BIDMADAppOpenAdAllFail:(BIDMADAppOpenAd *)core code:(NSString *)error {

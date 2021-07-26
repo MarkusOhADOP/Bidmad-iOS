@@ -23,7 +23,7 @@
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
     
     self.bidmadAppOpenAd = [[BIDMADAppOpenAd alloc] init];
-    self.bidmadAppOpenAd.zoneID = @"0ddd6401-0f19-49ee-b1f9-63e910f92e77";
+    self.bidmadAppOpenAd.zoneID = @"c2b88e38-6120-4716-9378-5cc8f3443767";
     self.bidmadAppOpenAd.delegate = self;
 }
 

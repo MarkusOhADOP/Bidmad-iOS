@@ -49,7 +49,7 @@
     @required
 
         - (void)onRewardInterstitialLoad:(BIDMADRewardInterstitial *)core current:(NSDictionary*) currentDic;
-        - (void)onRewardInterstitialError:(BIDMADRewardInterstitial *)core code:(NSString *)error failType:(NSString*) failType current:(NSDictionary*)currentDic passbackStr:(NSString*) passBackStr passback:(NSDictionary*) passbackDic;
+        - (void)onRewardInterstitialError:(NSString *)error failType:(NSString *)failType;
         - (void)onRewardInterstitialShow:(BIDMADRewardInterstitial *)core current:(NSDictionary*) currentDic;
         - (void)onRewardInterstitialClick:(BIDMADRewardInterstitial *)core current:(NSDictionary*) currentDic;
         - (void)onRewardInterstitialSuccess:(BIDMADRewardInterstitial *)core current:(NSDictionary*) currentDic;

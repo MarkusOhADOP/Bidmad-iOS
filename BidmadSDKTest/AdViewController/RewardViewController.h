@@ -12,8 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RewardViewController : UIViewController<BIDMADRewardVideoDelegate>
-@property BIDMADRewardVideo* reward;
+@interface RewardViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton* load;
 @property (weak, nonatomic) IBOutlet UIButton* show;
 @property (weak, nonatomic) IBOutlet UILabel* rewardCallbackDisplay;

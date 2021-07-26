@@ -6,8 +6,10 @@
 //
 
 #import "RewardViewController.h"
+#import <OpenBiddingHelper/OpenBiddingRewardVideo.h>
+@import FacebookAdapter;
 
-@interface RewardViewController ()
+@interface RewardViewController () <BIDMADOpenBiddingRewardVideoDelegate>
 {
 
     NSInteger entry;
@@ -22,6 +24,8 @@
     NSString * successLog;
     NSString * timeLog;
 }
+
+@property OpenBiddingRewardVideo* reward;
 @end
 
 @implementation RewardViewController
@@ -45,9 +49,11 @@
     
 //    [[BIDMADSetting sharedInstance] setTestDeviceId:@"YOUR_TEST_DEVICE_ID"];
     
-    self.reward = [[BIDMADRewardVideo alloc]init];
+    [FBAdSettings addTestDevice:@"073ae9596656231a5a8dafbc8f47bd548769ef87"];
+    
+    self.reward = [[OpenBiddingRewardVideo alloc]init];
     [[BIDMADSetting sharedInstance]setIsDebug:YES];
-    [self.reward setZoneID:@"29e1ef67-98d2-47b3-9fa2-9192327dd75d"];//테스트 존아이디입니다. 프로젝트 적용시 그대로 사용하시면 안됩니다.
+    [self.reward setZoneID:@"c28c280e-77e7-4f08-9e06-5e729432362c"];//테스트 존아이디입니다. 프로젝트 적용시 그대로 사용하시면 안됩니다.
     [self.reward setParentViewController:self];
     [self.reward setDelegate:self];
     
@@ -79,33 +85,33 @@
 }
 
 #pragma mark Reward Delegate
-- (void)BIDMADRewardVideoLoad:(BIDMADRewardVideo *)core {
-    self.rewardCallbackDisplay.text = @"BIDMADRewardVideoLoad";
+- (void)BIDMADOpenBiddingRewardVideoLoad:(OpenBiddingRewardVideo *)core {
+    self.rewardCallbackDisplay.text = @"OpenBiddingRewardVideoLoad";
 }
-- (void)BIDMADRewardVideoAllFail:(BIDMADRewardVideo *)core {
-    self.rewardCallbackDisplay.text = @"BIDMADRewardVideoAllFail";
+- (void)BIDMADOpenBiddingRewardVideoAllFail:(OpenBiddingRewardVideo *)core {
+    self.rewardCallbackDisplay.text = @"OpenBiddingRewardVideoAllFail";
 }
-- (void)BIDMADRewardVideoShow:(BIDMADRewardVideo *)core {
-    self.rewardCallbackDisplay.text = @"BIDMADRewardVideoShow";
-    NSLog(@"BIDMADRewardVideoShow Reload");
+- (void)BIDMADOpenBiddingRewardVideoShow:(OpenBiddingRewardVideo *)core {
+    self.rewardCallbackDisplay.text = @"OpenBiddingRewardVideoShow";
+    NSLog(@"OpenBiddingRewardVideoShow Reload");
     
-    self.reward = [[BIDMADRewardVideo alloc]init];
+    self.reward = [[OpenBiddingRewardVideo alloc]init];
     [self.reward setZoneID:core.zoneID];//테스트 존아이디입니다. 프로젝트 적용시 그대로 사용하시면 안됩니다.
     [self.reward setParentViewController:self];
     [self.reward setDelegate:self];
     [self.reward loadRewardVideo];
 }
-- (void)BIDMADRewardSkipped:(BIDMADRewardVideo *)core {
+- (void)BIDMADOpenBiddingRewardSkipped:(OpenBiddingRewardVideo *)core {
     self.rewardCallbackDisplay.text = @"BIDMADRewardSkipped";
 }
 
-- (void)BIDMADRewardVideoClose:(BIDMADRewardVideo *)core {
-    self.rewardCallbackDisplay.text = @"BIDMADRewardVideoClose";
-    NSLog(@"BIDMADRewardVideoClose");
+- (void)BIDMADOpenBiddingRewardVideoClose:(OpenBiddingRewardVideo *)core {
+    self.rewardCallbackDisplay.text = @"OpenBiddingRewardVideoClose";
+    NSLog(@"OpenBiddingRewardVideoClose");
 }
-- (void)BIDMADRewardVideoSucceed:(BIDMADRewardVideo *)core {
-    self.rewardCallbackDisplay.text = @"BIDMADRewardVideoSucceed";
-    NSLog(@"BIDMADRewardVideoSucceed");
+- (void)BIDMADOpenBiddingRewardVideoSucceed:(OpenBiddingRewardVideo *)core {
+    self.rewardCallbackDisplay.text = @"OpenBiddingRewardVideoSucceed";
+    NSLog(@"OpenBiddingRewardVideoSucceed");
 }
 
 @end

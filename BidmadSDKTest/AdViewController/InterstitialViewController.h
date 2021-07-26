@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @import BidmadSDK;
-@interface InterstitialViewController : UIViewController<BIDMADInterstitialDelegate>
-@property BIDMADInterstitial* interstitial;
+@interface InterstitialViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton* load;
 @property (weak, nonatomic) IBOutlet UIButton* show;
 @property (weak, nonatomic) IBOutlet UILabel* InterstitialCallbackDisplay;

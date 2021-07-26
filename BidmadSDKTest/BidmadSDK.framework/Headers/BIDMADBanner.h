@@ -12,13 +12,13 @@
 #import "BIDMADFacebook.h"
 #import "BIDMADAtom.h"
 #import "BIDMADAdmob.h"
-#import "BIDMADUnityAds.h"
+#import "BIDMADUnityAdsBanner.h"
 #import "BIDMADAdmanager.h"
 #import "BIDMADPangleBanner.h"
 
 #if __has_include(<AdFitSDK/AdFitSDK.h>) || __has_include("AdFitSDK.h")
 #import "BIDMADAdFit.h"
-#define ADFITSDK_EXIST
+#import <AdFitSDK/AdFitSDK.h>
 #endif
 
 @protocol BIDMADBannerDelegate;
@@ -28,7 +28,7 @@
 @optional
 
 - (void)onBannerAllFail:(BIDMADBanner *)core;
-- (void)onBannerError:(BIDMADBanner *)core code:(NSString *)error failType:(NSString*)failType current:(NSDictionary*)currentDic passbackStr:(NSString*) passBackStr passback:(NSDictionary*) passbackDic;
+- (void)onBannerError:(NSString *)error failType:(NSString *)failType;
 - (void)onBannerClosed:(BIDMADBanner *)core current:(NSDictionary*) currentDic;
 - (void)onBannerLoad:(BIDMADBanner *)core current:(NSDictionary*) currentDic;
 - (void)onBannerClick:(BIDMADBanner*) core current:(NSDictionary*) currentDic;
@@ -67,9 +67,14 @@
 
 @property (nonatomic, strong) NSString* currentAdNetwork;
 
-/// INITIALIZE ADS
-- (id)initWithParentViewController:(UIViewController *)parentVC adsPosition:(CGPoint)pointn bannerSize:(bannerSizeType) bannerTypeParam;
-- (id)initWithParentViewController:(UIViewController *)parentVC rootView:(UIView *)view    bannerSize:(bannerSizeType) bannerTypeParam;
+/// Banner Size Parameter is no longer supported, Please use initWithParentViewController:(UIViewController *):(CGPoint)
+- (id)initWithParentViewController:(UIViewController *)parentVC adsPosition:(CGPoint)point bannerSize:(bannerSizeType)bannerTypeParam __deprecated;
+/// Banner Size Parameter is no longer supported, Please use initWithParentViewController:(UIViewController *):(UIView *)
+- (id)initWithParentViewController:(UIViewController *)parentVC rootView:(UIView *)view bannerSize:(bannerSizeType) bannerTypeParam __deprecated;
+
+- (id)initWithParentViewController:(UIViewController *)parentVC adsPosition:(CGPoint)point;
+- (id)initWithParentViewController:(UIViewController *)parentVC rootView:(UIView *)view;
+- (id)initWithParentViewController:(UIViewController *)parentVC yPoint:(int)yPoint;
 /// REQUEST ADS
 - (void)requestBannerView;
 /// DELETE ADS

@@ -7,10 +7,11 @@
 //
 
 #import "InterstitialViewController.h"
+@import OpenBiddingHelper;
 
-@interface InterstitialViewController (){
+@interface InterstitialViewController () <BIDMADOpenBiddingInterstitialDelegate> {
 }
-
+@property BIDMADInterstitial* interstitial;
 @end
 
 
@@ -36,9 +37,9 @@
 //    [[BIDMADSetting sharedInstance] setTestDeviceId:@"YOUR_TEST_DEVICE_ID"];
     
     [[BIDMADSetting sharedInstance] setIsDebug:YES];
-    self.interstitial = [[BIDMADInterstitial alloc] init];
+    self.interstitial = [[OpenBiddingInterstitial alloc] init];
     [self.interstitial setParentViewController:self];
-    [self.interstitial setZoneID:@"228b95a9-6f42-46d8-a40d-60f17f751eb1"];
+    [self.interstitial setZoneID:@"c81d2b78-2d31-4cfa-9040-808778348589"];
     [self.interstitial setDelegate:self];
 }
 
@@ -66,23 +67,18 @@
 }
 
 #pragma mark Interstitial Delegate
-- (void)BIDMADAdError:(BIDMADInterstitial *)core code:(NSString *)error
-{
-    NSLog(@"BIDMADAdError : %@",error);
-    self.InterstitialCallbackDisplay.text = @"BIDMADAdError";
-}
 
-- (void)BIDMADInterstitialClose:(BIDMADInterstitial *)core
+- (void)BIDMADOpenBiddingInterstitialClose:(OpenBiddingInterstitial *)core
 {
     self.InterstitialCallbackDisplay.text = @"BIDMADInterstitialClose";
     NSLog(@"APPUI BIDMADInterstitialClose");
 }
 
-- (void)BIDMADInterstitialShow:(BIDMADInterstitial *)core
+- (void)BIDMADOpenBiddingInterstitialShow:(OpenBiddingInterstitial *)core
 {
     self.InterstitialCallbackDisplay.text = @"BIDMADInterstitialShow";
     
-    self.interstitial = [[BIDMADInterstitial alloc]init];
+    self.interstitial = [[OpenBiddingInterstitial alloc]init];
     [self.interstitial setZoneID:core.zoneID];
     [self.interstitial setParentViewController:self];
     [self.interstitial setDelegate:self];
@@ -90,7 +86,7 @@
     NSLog(@"APPUI BIDMADInterstitialShow");
 }
 
--(void)BIDMADInterstitialLoad:(BIDMADInterstitial *)core
+- (void)BIDMADOpenBiddingInterstitialLoad:(OpenBiddingInterstitial *)core
 {
     self.InterstitialCallbackDisplay.text = @"BIDMADInterstitialLoad";
     NSLog(@"APPUI BIDMADInterstitialLoad");

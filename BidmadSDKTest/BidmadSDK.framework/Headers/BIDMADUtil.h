@@ -83,4 +83,6 @@
 
 + (void) sendLog :(NSDictionary *)info : (NSString *)advertisementType : (NSString *)logType : (NSString *)recvSessionId;
 
++ (BOOL)dictionaryKeyCheck:(NSDictionary *)dictionary hasKey:(NSString *)key;
+
 @end

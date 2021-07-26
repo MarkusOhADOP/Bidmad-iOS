@@ -11,12 +11,10 @@
 #import "BIDMADSetting.h"
 #import "BIDMADFacebook.h"
 #import "BIDMADAtomReward.h"
-#import "BIDMADAdmob.h"
 #import "BIDMADAdmanager.h"
-#import "BIDMADUnityAds.h"
 #import "BIDMADAppLoving.h"
 #import "BIDMADInterstitial.h"
-#import "BIDMADAdmobAppOpenAd.h"
+#import "BIDMADAdMobAppOpenAd.h"
 
 @protocol BIDMADAppOpenAdDelegate;
 @protocol BIDMADAppOpenAdInnerDelegate;
@@ -38,7 +36,6 @@
 - (void)    showAppOpenAd;
 - (void) requestAppOpenAd;
 - (void)    selectAds:(NSDictionary *)lv_dic;
-- (void) sendLog :(NSDictionary *)info : (NSString *)advertisementType : (NSString *)logType :(NSString *)sessionIdArg;
 - (void) registerForAppOpenAdForZoneID: (NSString *)zoneId;
 - (void) deregisterForAppOpenAd;
 
@@ -58,7 +55,7 @@
 @required
 
 - (void)onAppOpenAdLoad:(BIDMADAppOpenAd *)core       current:(NSDictionary*) currentDic;
-- (void)onAppOpenAdError:(BIDMADAppOpenAd *)core code:(NSString *)error failType:(NSString*)failType current:(NSDictionary*)currentDic passbackStr:(NSString*) passBackStr passback:(NSDictionary*) passbackDic;
+- (void)onAppOpenAdError:(NSString *)error failType:(NSString*)failType;
 - (void)onAppOpenAdShow:(BIDMADAppOpenAd *)core       current:(NSDictionary*) currentDic;
 - (void)onAppOpenAdClick:(BIDMADAppOpenAd *)core      current:(NSDictionary*) currentDic;
 - (void)onAppOpenAdClose:(BIDMADAppOpenAd *)core      current:(NSDictionary*) currentDic;

@@ -7,9 +7,13 @@
 //
 
 #import "BannerViewController.h"
+//#import <AdFitSDK/AdFitSDK.h>
+@import OpenBiddingHelper;
+@import BidmadSDK;
 
-@interface BannerViewController (){
+@interface BannerViewController () <BIDMADBannerDelegate> {
     BIDMADBanner* banner;
+    NSString *zoneId;
 }
 
 @end
@@ -33,8 +37,13 @@
 //    [[BIDMADSetting sharedInstance] setTestDeviceId:@"YOUR_TEST_DEVICE_ID"];
     
     [BIDMADSetting sharedInstance].isDebug = YES;
-    banner = [[BIDMADBanner alloc] initWithParentViewController:self rootView:self.BannerContainer bannerSize:banner_320_50];
-    [banner setZoneID:@"1c3e3085-333f-45af-8427-2810c26a72fc"];
+    [[BIDMADSetting sharedInstance] setTestDeviceId:@"efef126bdf722af38e9142fe0869b4e7"];
+//    banner = [[OpenBiddingBanner alloc] initWithParentViewController:self rootView:self.BannerContainer];
+    banner = [[BIDMADBanner alloc] initWithParentViewController:self rootView:self.BannerContainer];
+//    banner = [[OpenBiddingBanner alloc] initWithParentViewController:self adsPosition:CGPointMake(0, 20)];
+//    banner = [[OpenBiddingBanner alloc] initWithParentViewController:self yPoint:20];
+    [banner setZoneID:@"ffb30f2a-f85f-4994-9540-62735ca6534e"];
+//    [banner setZoneID:@"6e688caf-321c-455b-87ad-736ad91e6d84"];
     [banner setDelegate:self];
     [banner setRefreshInterval:60];
 }
@@ -49,29 +58,19 @@
     NSLog(@"APPUI BIDMADBannerAllFail");
 }
 
-- (void)BIDMADAdError:(BIDMADBanner *)core code:(NSString *)error
-{
-    NSLog(@"BIDMADAdError : %@",error);
-    self.bannerCallbackDisplay.text = @"BIDMADAdError";
-}
-
-- (void)BIDMADBannerShow:(BIDMADBanner *)core
-{
-    self.bannerCallbackDisplay.text = @"BIDMADBannerShow";
-}
-
-- (void)BIDMADBannerClosed:(BIDMADBanner *)core
-{
+- (void)BIDMADBannerLoad:(BIDMADBanner *)core {
     self.bannerCallbackDisplay.text = @"BIDMADBannerClosed";
 }
 
--(void)BIDMADBannerLoad:(BIDMADBanner *)core{
+- (void)BIDMADBannerClick:(BIDMADBanner *)core {
     self.bannerCallbackDisplay.text = @"BIDMADBannerLoad";
     NSLog(@"APPUI BIDMADBannerLoad");
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 //        [banner removeAds];
 //    });
 }
+
+
 
 - (IBAction)backBtn:(id)sender {
     NSLog(@"Back Button Pressed");

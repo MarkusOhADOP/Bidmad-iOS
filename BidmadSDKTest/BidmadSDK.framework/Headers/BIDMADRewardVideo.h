@@ -13,7 +13,7 @@
 #import "BIDMADAtomReward.h"
 #import "BIDMADAdmob.h"
 #import "BIDMADAdmanager.h"
-#import "BIDMADUnityAds.h"
+#import "BIDMADUnityAdsReward.h"
 #import "BIDMADAppLoving.h"
 #import "BIDMADInterstitial.h"
 
@@ -23,7 +23,7 @@
 @required
 
 - (void)onVideoLoad:(BIDMADRewardVideo *)core       current:(NSDictionary*) currentDic;
-- (void)onVideoError:(BIDMADRewardVideo *)core code:(NSString *)error failType:(NSString*) failType current:(NSDictionary*)currentDic passbackStr:(NSString*) passBackStr passback:(NSDictionary*) passbackDic;
+- (void)onVideoError:(NSString *)error failType:(NSString *)failType;
 - (void)onVideoShow:(BIDMADRewardVideo *)core       current:(NSDictionary*) currentDic;
 - (void)onVideoClick:(BIDMADRewardVideo *)core      current:(NSDictionary*) currentDic;
 - (void)onVideoSuccess:(BIDMADRewardVideo *)core    current:(NSDictionary*) currentDic;
@@ -89,6 +89,8 @@
 - (void) sendLog :(NSDictionary *) info :(NSString *) advertisementType :(NSString *) logType :(NSString *)recvSessionId;
 
 - (void) releaseBidmadResource;
+
+- (void) removeRewardADS;
 
 
 @end

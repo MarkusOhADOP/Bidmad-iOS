@@ -79,7 +79,7 @@
 - (void)setupRewardInterstitial {
     rewardInterstitial = nil;
     rewardInterstitial = [[BIDMADRewardInterstitial alloc] init];
-    rewardInterstitial.zoneID = @"ee6e601d-2232-421b-a429-2e7163a8b41f";
+    rewardInterstitial.zoneID = @"6838644a-039e-4d5b-8857-6b0db41f3eb4";
     rewardInterstitial.parentViewController = self;
     rewardInterstitial.delegate = self;
     [rewardInterstitial requestRewardInterstitial];

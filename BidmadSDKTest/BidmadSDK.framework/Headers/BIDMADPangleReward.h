@@ -12,7 +12,9 @@
 #import <BUAdSDK/BUAdSDK.h>
 #import <BUVAAuxiliary/BUVAAuxiliary.h>
 
-NS_ASSUME_NONNULL_BEGIN
+#define PANGLE_REWARD_TEST_ID_VERTICAL @"946273162"
+#define PANGLE_REWARD_TEST_ID_HORIZONTAL @"946273166"
+#define PANGLE_REWARD_TEST_APPID @"5185174"
 
 @interface BIDMADPangleReward : NSObject<BURewardedVideoAdDelegate>
 
@@ -24,5 +26,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeRewardAds;
 
 @end
-
-NS_ASSUME_NONNULL_END
